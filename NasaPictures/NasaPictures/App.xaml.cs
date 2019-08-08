@@ -6,6 +6,7 @@ namespace NasaPictures
 {
     public partial class App : Application
     {
+        public static string ApiKey = "NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo";
         public App()
         {
             InitializeComponent();

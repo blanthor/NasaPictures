@@ -8,13 +8,18 @@
 
     <StackLayout>
         <!-- Place new controls here -->
+
         <Label Text="NASA Picture of the Day" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-        <DatePicker x:Name="ImageDate" />
-        <Label x:Name="Title" />
-        <Image x:Name="Picture" />
-        <Label x:Name="Didactic"/>
+           VerticalOptions="Start" />
+        <DatePicker x:Name="ImageDate" Date="{Binding ChosenDate}" />
+        <Label x:Name="Title" Text="{Binding Title}" />
+        <ScrollView>
+            <StackLayout>
+                <Image x:Name="Picture" Source="{Binding ImageURI}" />
+                <Label x:Name="Didactic" Text="{Binding Didactic}"/>
+            </StackLayout>
+        </ScrollView>
     </StackLayout>
 
 </ContentPage>

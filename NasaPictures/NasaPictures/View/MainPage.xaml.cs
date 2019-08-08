@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NasaPictures.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace NasaPictures
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new MainPageViewModel();
         }
     }
 }
