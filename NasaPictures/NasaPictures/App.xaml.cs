@@ -6,7 +6,9 @@ namespace NasaPictures
 {
     public partial class App : Application
     {
-        public static string ApiKey = "NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo";
+        // Go to https://api.nasa.gov/index.html to register
+        // for your own API Key
+        public static string ApiKey = "Your API KEY Here";
         public App()
         {
             InitializeComponent();
