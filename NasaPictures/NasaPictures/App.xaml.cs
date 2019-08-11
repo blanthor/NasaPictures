@@ -1,6 +1,11 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Distribute;
 
 namespace NasaPictures
 {
@@ -8,7 +13,7 @@ namespace NasaPictures
     {
         // Go to https://api.nasa.gov/index.html to register
         // for your own API Key
-        public static string ApiKey = "Your API KEY Here";
+        public static string ApiKey = "GXdcwZ3dCxg2iJnJfuIpQomceJfKBpI0T0DpzBhv";
         public App()
         {
             InitializeComponent();
@@ -18,7 +23,15 @@ namespace NasaPictures
 
         protected override void OnStart()
         {
+            // App Center Distribute 
+            // TODO: (does this go before the crashes or after?)
+            AppCenter.Start("ios=b001a65b-cc70-4c69-ad5f-51fefd3ea2c4;android=72f2672b-5b66-4e58-b21e-8c02a5df958e", typeof(Distribute));
+
             // Handle when your app starts
+            AppCenter.Start("android=72f2672b-5b66-4e58-b21e-8c02a5df958e;" +
+                  //"uwp={Your UWP App secret here};" +
+                  "ios=b001a65b-cc70-4c69-ad5f-51fefd3ea2c4",
+                  typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()

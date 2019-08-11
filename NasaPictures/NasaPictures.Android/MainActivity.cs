@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Distribute;
 
 namespace NasaPictures.Droid
 {
@@ -14,6 +16,12 @@ namespace NasaPictures.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            //App Center Distribution 
+            //Distribute.SetEnabledInDebbugableBuild(true); // enables In-App updates. Maybe not yet.
+            //TODO: propbably wrong: AppCenter.Start("{72f2672b-5b66-4e58-b21e-8c02a5df958e}", typeof(Distribute));
+            AppCenter.Start("72f2672b-5b66-4e58-b21e-8c02a5df958e", typeof(Distribute));
+
+            //Default Xamarin.Forms.
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
